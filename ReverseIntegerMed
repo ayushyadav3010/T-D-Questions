@@ -1,1 +1,32 @@
+import java.util.Scanner;
+
+// for ex:
+// input:123
+// O/p:321
+// I/P;-123
+// O/p;-321
+
+public class ReverseInetegerMed {
+
+    public static int reverse(int n)
+    {
+        long reverse=0;
+        while(n!=0)
+        {
+            reverse=reverse*10+(n%10);
+            n=n/10;
+        }
+        if((reverse>Integer.MAX_VALUE)|| (reverse<Integer.MIN_VALUE))
+        {
+            return 0;
+        }
+        return (int)reverse;
+    }
+    public static void main(String[]args)
+    {
+        Scanner sc =new Scanner(System.in);
+        int num=sc.nextInt();
+        System.out.println(reverse(num));
+    }
+}
 
