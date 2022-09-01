@@ -1,1 +1,37 @@
+import java.util.Scanner;
+
+//arr={13,34,2,34,33,1}
+public class UniquePaths {
+    public static int findSecondMax(int[] arr)
+    {
+        int n=arr.length;
+        int max=Integer.MIN_VALUE;
+        int secMax=Integer.MIN_VALUE;
+        for(int i=0;i<n;i++){
+            if(arr[i]>max)
+            {
+                secMax=max;
+                max=arr[i];
+            }else if(arr[i]>secMax && arr[i]!=max)
+            {
+                secMax=arr[i];
+            }
+        }
+        return secMax;
+
+    }
+    public static void main(String[]args)
+    {
+    
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println(findSecondMax(arr));
+
+    }
+    
+}
 
