@@ -1,1 +1,28 @@
+import java.util.Scanner;
+
+public class FirstUniqueCaharactersinaString {
+
+    public static int minmumRepeat(String str)
+    {
+        int result=Integer.MAX_VALUE;
+        for(char c='a';c<='z';c++)
+        {
+            int index=str.indexOf(c);
+            if(index!=-1&&index==str.lastIndexOf(c))
+            {
+                result=Math.min(result,index);
+            }
+        }
+
+        return result==Integer.MAX_VALUE?-1:result;
+
+    }
+    public static void main(String[]args)
+    {
+        Scanner sc =new Scanner(System.in);
+        String str=sc.nextLine();
+        System.out.println(minmumRepeat(str));
+    }
+    
+}
 
