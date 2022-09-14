@@ -1,1 +1,46 @@
+import java.util.Scanner;
+
+public class GasStation {
+    public static int gasStation(int arr1[],int arr2[])
+{
+    int pos=-1;
+    int curr=0;
+    int total=0;
+    for(int i=0;i<=arr1.length-1;i++)
+    {
+        int diff=arr1[i]-arr2[i];
+        curr+=diff;
+        total+=diff;
+        if(curr<0)
+        {
+            curr=0;
+            pos=i;
+        }
+    }
+    if(total>=0)
+    {
+        return pos+1;
+    }
+    return -1;
+}
+    public static void main(String[]args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr1[]=new int[n];
+        int arr2[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr1[i]=sc.nextInt();
+        }
+        for(int j=0;j<n;j++)
+        {
+            arr2[j]=sc.nextInt();
+        }
+        System.out.println(gasStation(arr1,arr2));
+
+
+    }
+    
+}
 
